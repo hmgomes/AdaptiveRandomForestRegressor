@@ -1,29 +1,21 @@
-# MOA (Massive Online Analysis)
+# AdaptiveRandomForestRegressor
+This repository includes the adaptive random forest algorithm adaptation for regression tasks (AKA ARF-Reg). It uses as the base learner the FIMTDD decision tree algorithm. Look up the publication for more details.  Initially, ARF-Reg was implemented in a previous version of MOA, but this repository is based on MOA 2018.06. 
 
-![MOA][logo]
+## Citing AdaptiveRandomForestRegressor
+To cite this ARF-Reg in a publication, please cite the following paper: 
+> Heitor Murilo Gomes, Jean Paul Barddal, Luis Eduardo Boiko Ferreira, Albert Bifet.
+> In European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning (ESANN), 2018.
+> PDF: https://www.elen.ucl.ac.be/Proceedings/esann/esannpdf/es2018-183.pdf
 
-[logo]: http://moa.cms.waikato.ac.nz/wp-content/uploads/2014/11/LogoMOA.jpg "Logo MOA"
+## Important source files
+If you are here, then you are probably looking for the implementations used in the original AdaptiveRandomForestRegressor paper, which are:
+* AdaptiveRandomForestRegressor.java: The ensemble learner AdaptiveRandomForestRegressor
+* ARFFIMTDD.java: The base tree learner used by AdaptiveRandomForest
 
-MOA is the most popular open source framework for data stream mining, with a very active growing community ([blog](http://moa.cms.waikato.ac.nz/blog/)). It includes a collection of machine learning algorithms (classification, regression, clustering, outlier detection, concept drift detection and recommender systems) and tools for evaluation. Related to the WEKA project, MOA is also written in Java, while scaling to more demanding problems.
+All the other classes are from [MOA](https://github.com/Waikato/moa). Notice that this repository is based on MOA 2018.06. In the future, these classes (AdaptiveRandomForestRegressor.java and ARFFIMTDD.java) might need some adaptation to work in future versions (as of 2018 they are working just fine). 
 
-http://moa.cms.waikato.ac.nz/
+## How to execute it 
+You can copy and paste the following command in the interface (right click the configuration text edit and select "Enter configuration”).
+Sample command: 
 
-## Using MOA
-
-* [Getting Started](http://moa.cms.waikato.ac.nz/getting-started/)
-* [Documentation](http://moa.cms.waikato.ac.nz/documentation/)
-* [About MOA](http://moa.cms.waikato.ac.nz/details/)
-
-MOA performs BIG DATA stream mining in real time, and large scale machine learning. MOA can be extended with new mining algorithms, and new stream generators or evaluation measures. The goal is to provide a benchmark suite for the stream mining community. 
-
-## Mailing lists
-* MOA users: http://groups.google.com/group/moa-users
-* MOA developers: http://groups.google.com/group/moa-development
-
-## Citing MOA
-If you want to refer to MOA in a publication, please cite the following JMLR paper: 
-
-> Albert Bifet, Geoff Holmes, Richard Kirkby, Bernhard Pfahringer (2010);
-> MOA: Massive Online Analysis; Journal of Machine Learning Research 11: 1601-1604 
-
-
+`EvaluatePrequentialRegression -l (meta.AdaptiveRandomForestRegressor -l (ARFFIMTDD -k 4 -s VarianceReductionSplitCriterion)) -i 1000000`
