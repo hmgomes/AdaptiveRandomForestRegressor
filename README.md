@@ -4,6 +4,7 @@ This repository includes the adaptive random forest algorithm adaptation for reg
 ## Citing AdaptiveRandomForestRegressor
 To cite this ARF-Reg in a publication, please cite the following paper: 
 > Heitor Murilo Gomes, Jean Paul Barddal, Luis Eduardo Boiko Ferreira, Albert Bifet.
+> Adaptive random forests for data stream regression.
 > In European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning (ESANN), 2018.
 > PDF: https://www.elen.ucl.ac.be/Proceedings/esann/esannpdf/es2018-183.pdf
 
