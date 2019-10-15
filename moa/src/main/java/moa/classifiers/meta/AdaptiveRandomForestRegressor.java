@@ -156,6 +156,10 @@ public class AdaptiveRandomForestRegressor extends AbstractClassifier implements
     }
 
     protected void initEnsemble(Instance instance) {
+        // Check if prepareForUse() has been called
+        if(this.config == null) {
+            prepareForUse();
+        }
         // Init the ensemble.
         int ensembleSize = this.ensembleSizeOption.getValue();
         this.ensemble = new ARFFIMTDDBaseLearner[ensembleSize];
